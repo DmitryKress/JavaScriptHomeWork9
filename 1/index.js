@@ -14,13 +14,16 @@ let initFunction = function() {
 };
 */
 
-//let enterName = function() {
-let name = prompt("Please, type your name");
-localStorage.setItem(name, "key");
-document.getElementById("h1").innerText = "Hello" + localStorage.getItem(name);
-//};
+const h2 = document.getElementById("h2text");
 
-/*let reName = function() {
-  localStorage.getItem(name);
-  document.getElementById("h1").innerText = "Hello" + name;
-}; */
+for (let i = 0; name.length < 2; i++) {
+  let name = prompt("Type your name, pls");
+  if (name.length >= 2) {
+    localStorage.setItem("name", name);
+    document.querySelector(h2).textContent =
+      "Hello " + localStorage.getItem("name");
+    break;
+  } else {
+    alert("Your name must be more than 2 letters");
+  }
+}
